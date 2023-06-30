@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/drawer_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- Main content -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <!-- Top bar with search bar -->
+    <RelativeLayout
+        android:paddingTop="8sp"
+        android:paddingBottom="15sp"
+        android:id="@+id/topBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white">
+
+        <ImageView
+            android:layout_centerVertical="true"
+            android:id="@+id/menuButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="26.5sp"
+            android:src="@drawable/menu_bar_lines"
+            android:clickable="true"
+            app:tint="@color/grey" />
+
+        <ImageView
+            android:layout_centerVertical="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="26.5sp"
+            android:layout_width="18dp"
+            android:layout_height="21dp"
+            android:background="@drawable/bell_icon_hollow"
+            android:clickable="true"
+            app:tint="@color/grey" />
+
+    </RelativeLayout>
+
+    <FrameLayout
+        android:id="@+id/fragment_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/topBar" />
+    </RelativeLayout>
+
+    <com.google.android.material.navigation.NavigationView
+        android:id="@+id/navigation_view"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:background="@color/white"
+        app:headerLayout="@layout/nav_header"
+        app:menu="@menu/drawer_menu" />
+
+</androidx.drawerlayout.widget.DrawerLayout>

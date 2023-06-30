@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".fragments.ApplicantsPopUpFragment">
+
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="380dp"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="10dp"
+        app:cardUseCompatPadding="true">
+
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:padding="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:gravity="center_vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/tv_popUp_heading_JobTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Applicants for Helper"
+                android:textColor="@color/black"
+                android:textSize="15dp"
+                android:textStyle="bold"/>
+
+            <RelativeLayout
+                android:id="@+id/close_btn_popUp_Relative_layout"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:id="@+id/close_btn_pop_Up"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_width="10dp"
+                    android:layout_height="10dp"
+                    android:src="@drawable/close_icon"
+                    app:tint="@color/grey" />
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="@color/grey"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp"/>
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+<LinearLayout
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerView_Applicants"
+            tools:listitem="@layout/applicants_each_item"
+            android:layout_width="wrap_content"
+
+            android:layout_height="wrap_content"
+            />
+
+        <TextView
+            android:layout_gravity="center_horizontal"
+            android:text="~ the end ~"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+        </androidx.core.widget.NestedScrollView>
+
+
+    </LinearLayout>
+    </androidx.cardview.widget.CardView>
+</FrameLayout>

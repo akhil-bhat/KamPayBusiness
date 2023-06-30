@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".Home_fragment">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <LinearLayout
+            android:id="@+id/container_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:id="@+id/relativeLayout"
+                android:background="@color/white"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:paddingLeft="17.5sp"
+                android:paddingRight="17.5sp"
+                android:paddingBottom="10sp">
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:layout_centerHorizontal="true"
+                    android:id="@+id/searchView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="34sp"
+                    android:hint="Search for Job Type, Businesss name or more..."
+                    app:defaultQueryHint="search"
+                    android:outlineSpotShadowColor="@color/grey_10T"
+                    android:textSize="12sp"
+                    app:iconifiedByDefault="true"
+                    android:paddingLeft="14sp"
+                    android:paddingRight="14sp"
+                    android:background="@drawable/searchview_background"
+                    android:drawableRight="@drawable/search_icon_for_bar"
+                    android:drawablePadding="17sp"/>
+            </RelativeLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:visibility="gone"
+                android:id="@+id/job_list_recycler_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:listitem="@layout/job_description_card"/>
+
+            <TextView
+                android:visibility="gone"
+                android:id="@+id/default_TV_home"
+                android:layout_marginTop="200dp"
+                android:layout_gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Hit a (+) icon to add job"/>
+
+            <ProgressBar
+                android:id="@+id/home_progress_bar"
+                android:visibility="visible"
+                android:layout_marginTop="220dp"
+                android:layout_gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+
+
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/add_job_btn"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentEnd="true"
+            android:layout_margin="16dp"
+            android:clickable="true"
+            android:background="@drawable/plus_button" />
+
+
+
+    </RelativeLayout>
+
+</FrameLayout>
